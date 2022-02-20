@@ -1,0 +1,23 @@
+{
+  "name": "project-manager-webpack",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "author": "<hevesiistvan71@hotmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^4.5.5",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "description": "",
+  "dependencies": {
+    "save": "^2.4.0"
+  }
+}
