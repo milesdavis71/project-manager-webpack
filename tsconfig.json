@@ -6,6 +6,7 @@
 
     /* Modules */
     "module": "es2015" /* Specify what module code is generated. */,
+    "lib": ["dom", "es6", "dom.iterable", "scripthost"],
     "sourceMap": true /* Create source map files for emitted JavaScript files. */,
     "outDir": "./dist" /* Specify an output folder for all emitted files. */,
     "removeComments": true /* Disable emitting comments. */,

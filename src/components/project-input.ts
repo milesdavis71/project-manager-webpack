@@ -1,5 +1,10 @@
-export class ProjectInput {
+import { Component } from './base-component';
+
+export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
   constructor() {
-    console.log('huhu');
+    super('project-input', 'app', true, 'user-input');
   }
+  configure(): void {}
+
+  renderContent(): void {}
 }
