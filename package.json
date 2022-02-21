@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack --config webpack.config.prod.js"
   },
   "author": "<hevesiistvan71@hotmail.com>",
   "license": "MIT",
