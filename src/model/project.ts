@@ -5,7 +5,7 @@ export enum ProjectStatus {
 
 export class Project {
   constructor(
-    public projectId: string,
+    public id: string,
     public title: string,
     public description: string,
     public people: number,

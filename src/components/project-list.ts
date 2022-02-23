@@ -1,6 +1,7 @@
 import Component from './base-component';
 import { projectState } from '../state/project-state';
 import { Project, ProjectStatus } from '../model/project';
+import { ProjectItem } from './project-item';
 
 export class ProjectList extends Component<HTMLDivElement, HTMLElement> {
   assignedProjects: Project[];
@@ -29,9 +30,10 @@ export class ProjectList extends Component<HTMLDivElement, HTMLElement> {
   }
   renderProject() {
     const listElement = document.getElementById(`${this.type}-project-lists`);
-    const listLiElement = this.assignedProjects
-      .map(assPrj => `<li>${assPrj.title}</li>`)
-      .join('');
-    listElement!.innerHTML = `<ul>${listLiElement}</ul>`;
+    listElement!.innerHTML = '';
+
+    this.assignedProjects.map(
+      assPrj => new ProjectItem(this.element.querySelector('ul')!.id, assPrj)
+    );
   }
 }
