@@ -1,16 +1,18 @@
-export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
+export default abstract class Component<
+  T extends HTMLElement,
+  U extends HTMLElement
+> {
   templateElement: HTMLTemplateElement;
   hostElement: T;
   element: U;
-
   constructor(
-    templateId: string,
+    projectId: string,
     hostId: string,
     insertAtStart: boolean,
     newElementId?: string
   ) {
     this.templateElement = document.getElementById(
-      templateId
+      projectId
     )! as HTMLTemplateElement;
     this.hostElement = document.getElementById(hostId)! as T;
 
@@ -22,14 +24,16 @@ export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
     if (newElementId) {
       this.element.id = newElementId;
     }
+
     this.attach(insertAtStart);
   }
-  attach(insertAtBeginning: boolean) {
+  attach(insertAtbeginning: boolean) {
     this.hostElement.insertAdjacentElement(
-      insertAtBeginning ? 'afterbegin' : 'beforeend',
+      insertAtbeginning ? 'afterbegin' : 'beforeend',
       this.element
     );
   }
-  abstract configure(): void;
+
+  abstract config(): void;
   abstract renderContent(): void;
 }
